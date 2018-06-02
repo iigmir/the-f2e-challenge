@@ -10,15 +10,16 @@ import { AppRoutingModule } from "./app-routing.module";
 import { AboutComponent } from "./about/about.component";
 
 @NgModule({
+    imports: [
+        BrowserModule,
+        FormsModule,
+        AppRoutingModule
+    ],
     declarations: [
         AppComponent,
         NavbarComponent,
         IndexComponent,
         AboutComponent
-    ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule
     ],
     bootstrap: [AppComponent]
 })
