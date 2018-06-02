@@ -22,6 +22,6 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('Welcome to the-f2e-challenge!');
+    expect(compiled.querySelector('h1').textContent).toContain('歡迎來到前端精神時光屋的作品集！');
   }));
 });
