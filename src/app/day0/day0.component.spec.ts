@@ -1,7 +1,6 @@
 import { async, ComponentFixture, TestBed, inject, fakeAsync } from "@angular/core/testing";
 import { HttpClientTestingModule, HttpTestingController } from "@angular/common/http/testing";
-
-// import {  } from '@angular/http/testing';
+import { ReactiveFormsModule, FormsModule, Validators } from "@angular/forms";
 
 import { Day0Component } from "./day0.component";
 import { F2eService } from "../f2e.service";
@@ -14,7 +13,7 @@ describe("Day0Component", () =>
     beforeEach(async(() => {
         TestBed.configureTestingModule({
             declarations: [ Day0Component ],
-            imports: [ HttpClientTestingModule ]
+            imports: [ HttpClientTestingModule, FormsModule ]
         })
         .compileComponents();
     }));
@@ -49,9 +48,10 @@ describe("Day0Component", () =>
         });
     });
 
-    it("should have something can let user type Email after click" , () =>
+    it("should check users' Email correct" , () =>
     {
         fixture.detectChanges();
         const compiled = fixture.debugElement.nativeElement;
+        // Day0Component
     });
 });

@@ -20,15 +20,24 @@
 
 <hr class="ts divider" />
 
+<div class="ts action input">
+    <input required name="email" type="email" placeholder="輸入你的 Email"
+    [(ngModel)]="input_email" />
+    <button class="ts button" (click)="search_email()">搜尋</button>
+</div>
+
 <div class="ts grid">
-    <div class="six wide column">
-        <div class="ts basic icon input">
-            <input type="email" placeholder="輸入你的 Email" />
-            <i class="circular search link icon"></i>
+    <div class="eight wide column">
+        <div *ngIf="input_email.invalid && (input_email.dirty || input_email.touched)"
+            class="ts basic icon input">
+            <div class="ts negative message">
+                <p> 輸入錯誤 </p>
+            </div>
         </div>
     </div>
 </div>
 
-<p> Angular 是以 HTTP plugin 實作 AJAX 請求。<br />
-    這個 plugin 已經內建在裡面了，但除了要啟動外，還需要建立一個服務以發動請求。 </p>
-<p> TypeScript 必須要事先宣告型別。但如果不確定，可以宣告 any 型別，這樣就能方便使用。 </p>
+<p> Angular 是以 HTTP 模塊實作 AJAX 請求。<br />
+    這個模塊已經內建在裡面了，但要使用的話，除了要<strong>引入模塊</strong>外，還需要<strong>建立服務</strong>以發動請求。 </p>
+<p> TypeScript 必須要<strong>事先宣告</strong>型別。但如果不確定，可以宣告 any 型別，這樣就能方便使用。 </p>
+<p> 千萬記得，就算在程式裡面有放模塊，<strong>不代表測試檔裡面就能偵測到模塊</strong>。你會需要在測試檔裡面引入模塊。 </p>
