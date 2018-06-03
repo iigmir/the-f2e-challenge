@@ -1,6 +1,7 @@
 import { TestBed, async } from "@angular/core/testing";
 import { AppComponent } from "./app.component";
 import { RouterTestingModule } from "@angular/router/testing";
+import { NavbarComponent } from "./navbar/navbar.component";
 
 describe("AppComponent", () =>
 {
@@ -8,8 +9,10 @@ describe("AppComponent", () =>
     {
         TestBed.configureTestingModule({
             declarations: [
-                AppComponent
+                AppComponent,
+                NavbarComponent
             ],
+            imports: [ RouterTestingModule ]
         }).compileComponents();
     }));
 
