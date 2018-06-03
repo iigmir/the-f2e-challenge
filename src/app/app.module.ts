@@ -10,6 +10,7 @@ import { IndexComponent } from "./index/index.component";
 
 import { AppRoutingModule } from "./app-routing.module";
 import { AboutComponent } from "./about/about.component";
+import { Day0Component } from "./day0/day0.component";
 
 @NgModule({
     imports: [
@@ -23,9 +24,10 @@ import { AboutComponent } from "./about/about.component";
         AppComponent,
         NavbarComponent,
         IndexComponent,
-        AboutComponent
+        AboutComponent,
+        Day0Component
     ],
-    bootstrap: [AppComponent]
+    bootstrap: [ AppComponent ]
 })
 
 export class AppModule { }
