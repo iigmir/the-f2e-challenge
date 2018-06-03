@@ -1,4 +1,5 @@
 import { NgModule } from "@angular/core";
+import { HttpModule } from "@angular/http";
 import { BrowserModule } from "@angular/platform-browser";
 import { FormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
@@ -15,6 +16,7 @@ import { AboutComponent } from "./about/about.component";
         BrowserModule,
         FormsModule,
         AppRoutingModule,
+        HttpModule,
         HttpClientModule
     ],
     declarations: [
