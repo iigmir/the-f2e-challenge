@@ -32,6 +32,8 @@ describe("Day0Component", () =>
 
     it("should have something can let user type Email" , () =>
     {
-        //
+        fixture.detectChanges();
+        const compiled = fixture.debugElement.nativeElement;
+        expect( compiled.querySelector('input[type="email"]').length > 0 );
     });
 });
