@@ -1,5 +1,6 @@
 import { TestBed, async } from "@angular/core/testing";
 import { AppComponent } from "./app.component";
+import { ReactiveFormsModule, FormsModule, Validators } from "@angular/forms";
 import { RouterTestingModule } from "@angular/router/testing";
 import { NavbarComponent } from "./navbar/navbar.component";
 
@@ -12,7 +13,11 @@ describe("AppComponent", () =>
                 AppComponent,
                 NavbarComponent
             ],
-            imports: [ RouterTestingModule ]
+            imports: [
+                RouterTestingModule,
+                ReactiveFormsModule,
+                FormsModule,
+            ]
         }).compileComponents();
     }));
 
