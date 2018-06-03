@@ -15,6 +15,8 @@ const httpOptions = {
 
 export class F2eService
 {
+    private API: String = "https://www.thef2e.com/api/";
+
     constructor(
         private http: HttpClient
     ) { }
@@ -35,8 +37,18 @@ export class F2eService
 
     get_signup (): Observable<F2E["signup_count"]>
     {
-        return this.http
-        .get<F2E["signup_count"]>("https://www.thef2e.com/api/signUpTotal")
+        return this.http.get<F2E["signup_count"]>("https://www.thef2e.com/api/signUpTotal")
+        .pipe(
+            tap( data => data ),
+            catchError( this.handleError )
+        );
+    }
+
+    is_sign_up ( input_email ): Observable<F2E["signup_info"]>
+    {
+        const url_api = this.API + "isSignUp";
+        const input_api = { "email" : input_email };
+        return this.http.post<F2E["signup_info"]>( url_api , input_api )
         .pipe(
             tap( data => data ),
             catchError( this.handleError )

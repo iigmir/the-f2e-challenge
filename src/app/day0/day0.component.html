@@ -23,18 +23,21 @@
 <div class="ts action input">
     <input required name="email" type="email" placeholder="輸入你的 Email"
     [(ngModel)]="input_email" />
-    <button class="ts button" (click)="search_email()">搜尋</button>
+    <button class="ts button" (click)="search_email( input_email )">搜尋</button>
 </div>
 
-<div class="ts grid">
-    <div class="eight wide column">
-        <div *ngIf="input_email.invalid && (input_email.dirty || input_email.touched)"
-            class="ts basic icon input">
-            <div class="ts negative message">
-                <p> 輸入錯誤 </p>
-            </div>
-        </div>
+<div class="ts segment"
+    [ngClass]="{
+        'positive': my_info.success === true ,
+        'negative' : my_info.success === false }
+    ">
+    <div class="ts active dimmer" *ngIf="request_status.waiting_response === true">
+        <div class="ts loader"></div>
     </div>
+    <p *ngIf="request_status.never_request === true">輸入一下上面的東西，讓我看一下你的報名日期吧。</p>
+    <p *ngIf="request_status.waiting_response === true">讀取中</p>
+    <p *ngIf="my_info.success === true">哈囉，在 {{ readable_time }} 報名的 {{ my_info.nickName }}，讓我們一起在 {{ my_info.skill }} 精進的路上努力吧！</p>
+    <p *ngIf="my_info.success === false">噢噢，這條路上似乎沒有你在。網路沒有你就不一樣了：（</p>
 </div>
 
 <p> Angular 是以 HTTP 模塊實作 AJAX 請求。<br />
