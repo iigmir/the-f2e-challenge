@@ -17,4 +17,18 @@ describe("F2eService", () =>
     {
         expect(service).toBeTruthy();
     }));
+
+    it("should get response about sign up number", inject([F2eService], (service: F2eService) =>
+    {
+        service.get_signup().subscribe( info =>
+        {   // service is decleared, you do NOT need to write F2eService !
+            expect( info.total ).toBeGreaterThan( 0 );
+        });
+    }));
+    /*
+    F2eService.get_signup.subscribe( info =>
+        {
+            // expect(users.length).toBe(2);
+        });
+    */
 });

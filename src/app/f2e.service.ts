@@ -19,12 +19,22 @@ export class F2eService
         private http: HttpClient
     ) { }
 
-    getYN (): Observable<F2E[]>
+    get_yn (): Observable<F2E[]>
     {
         return this.http
         .get<F2E[]>("https://yesno.wtf/api")
         .pipe(
             tap( heroes => console.log(`fetched`) ),
+            catchError( this.handleError )
+        );
+    }
+
+    get_signup (): Observable<F2E[]>
+    {
+        return this.http
+        .get<F2E[]>("https://www.thef2e.com/api/signUpTotal")
+        .pipe(
+            tap( data => data ),
             catchError( this.handleError )
         );
     }

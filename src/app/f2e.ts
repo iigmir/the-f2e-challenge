@@ -1,5 +1,8 @@
 export class F2E
 {
-    id: number;
-    name: string;
+    success: boolean;
+    message: string;
+    nickName: string;
+    timeStamp: number;
+    skill: string;
 }
