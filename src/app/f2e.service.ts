@@ -29,10 +29,10 @@ export class F2eService
         );
     }
 
-    get_signup (): Observable<F2E[]>
+    get_signup (): Observable<F2E["signup_count"]>
     {
         return this.http
-        .get<F2E[]>("https://www.thef2e.com/api/signUpTotal")
+        .get<F2E["signup_count"]>("https://www.thef2e.com/api/signUpTotal")
         .pipe(
             tap( data => data ),
             catchError( this.handleError )

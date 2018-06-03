@@ -22,13 +22,8 @@ describe("F2eService", () =>
     {
         service.get_signup().subscribe( info =>
         {   // service is decleared, you do NOT need to write F2eService !
+            // https://blog.angulartraining.com/how-to-write-unit-tests-for-angular-code-that-uses-the-httpclient-429fa782eb15
             expect( info.total ).toBeGreaterThan( 0 );
         });
     }));
-    /*
-    F2eService.get_signup.subscribe( info =>
-        {
-            // expect(users.length).toBe(2);
-        });
-    */
 });

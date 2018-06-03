@@ -10,6 +10,8 @@ import { F2eService } from "../f2e.service";
 export class Day0Component implements OnInit
 {
     resigned: Number = 0;
+    input_email: String = "";
+
     constructor( private F2eService: F2eService ) { }
     ngOnInit()
     {
@@ -17,7 +19,6 @@ export class Day0Component implements OnInit
         {
             if ( res.success === true )
             {
-                // console.log( res );
                 this.resigned = res.total;
             }
         });

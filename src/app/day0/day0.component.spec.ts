@@ -45,19 +45,13 @@ describe("Day0Component", () =>
                 expect( data.success ).toBe( true );
                 expect( data.total ).toBeGreaterThan( 0 );
                 expect( output_number ).toBeGreaterThan(0);
-                // expect(data.pageInfo.pageNumber).toBe(0);
-                // expect(data.data.length).toBe(7);
             });
-            // We set the expectations for the HttpClient mock
-            // const req = httpMock.expectOne('http://.../data/contacts');
-            // expect(req.request.method).toEqual('GET');
         });
     });
 
-    it("should have something can let user type Email" , () =>
+    it("should have something can let user type Email after click" , () =>
     {
         fixture.detectChanges();
         const compiled = fixture.debugElement.nativeElement;
-        expect( compiled.querySelector('input[type="email"]').length > 0 );
     });
 });
