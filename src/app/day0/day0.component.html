@@ -1,11 +1,34 @@
-<div class="ts statistic">
-    <div class="label">報名人數</div>
-    <div class="value"> {{ resigned }} </div>
+<div class="ts grid">
+    <div class="eight wide column">
+        <h2> 第零週：觀察報名資訊 </h2>
+        <h3 class="ts sub header"> 使用 <a href="https://github.com/hexschool/TheF2E/wiki/API-DOC">API</a> 檢查報名資訊 </h3>
+    </div>
+    <div class="six wide column">
+        <div class="ts statistic">
+            <div class="label">報名人數</div>
+            <div class="value">
+                <span *ngIf="success; else elseBlock">
+                    {{ resigned }}
+                </span>
+                <ng-template #elseBlock>
+                    <span class="pulsing">請稍待...</span>
+                </ng-template>
+            </div>
+        </div>
+    </div>
 </div>
 
-<p> 第零天：觀察報名資訊 </p>
+<hr class="ts divider" />
 
-<div class="ts basic icon input">
-    <input type="email" placeholder="輸入你的 Email" />
-    <i class="circular search link icon"></i>
+<div class="ts grid">
+    <div class="six wide column">
+        <div class="ts basic icon input">
+            <input type="email" placeholder="輸入你的 Email" />
+            <i class="circular search link icon"></i>
+        </div>
+    </div>
 </div>
+
+<p> Angular 是以 HTTP plugin 實作 AJAX 請求。<br />
+    這個 plugin 已經內建在裡面了，但除了要啟動外，還需要建立一個服務以發動請求。 </p>
+<p> TypeScript 必須要事先宣告型別。但如果不確定，可以宣告 any 型別，這樣就能方便使用。 </p>

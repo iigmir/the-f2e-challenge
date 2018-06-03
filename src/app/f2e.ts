@@ -7,9 +7,12 @@ export class F2E
         timeStamp: number;
         skill: string;
     };
-
     signup_count: {
         success: boolean;
         total: number;
+    };
+    example: {
+        answer: string;
+        forced: boolean;
     };
 }
