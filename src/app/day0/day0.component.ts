@@ -15,11 +15,17 @@ export class Day0Component implements OnInit
     success: Boolean = false;
     input_email: String = "foobar@example.com";
     // waiting_response: Boolean = false;
-    request_status = {
+    request_status: any = {
         waiting_response : false,
         never_request : true
     };
-    my_info: any;
+    my_info: any = {
+        success: Boolean,
+        message: String,
+        nickName: String,
+        timeStamp: Number,
+        skill: String
+    };
     readable_time: Object;
 
     constructor( private service: F2eService ){}
