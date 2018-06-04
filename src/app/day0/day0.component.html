@@ -27,10 +27,11 @@
 </div>
 
 <div class="ts segment"
-    [ngClass]="{
+    [ngClass]="
+    {
         'positive': my_info.success === true ,
-        'negative' : my_info.success === false }
-    ">
+        'negative' : my_info.success === false
+    }">
     <div class="ts active dimmer" *ngIf="request_status.waiting_response === true">
         <div class="ts loader"></div>
     </div>
