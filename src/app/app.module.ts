@@ -11,6 +11,7 @@ import { NavbarComponent } from "./navbar/navbar.component";
 import { IndexComponent } from "./index/index.component";
 import { AboutComponent } from "./about/about.component";
 import { Day0Component } from "./day0/day0.component";
+import { Week1Component } from "./week1/week1.component";
 
 @NgModule({
     imports: [
@@ -26,7 +27,8 @@ import { Day0Component } from "./day0/day0.component";
         NavbarComponent,
         IndexComponent,
         AboutComponent,
-        Day0Component
+        Day0Component,
+        Week1Component
     ],
     bootstrap: [ AppComponent ]
 })
